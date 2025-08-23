@@ -1,6 +1,6 @@
 ---
 description: 'Documentation and content creation standards'
-applyTo: 'docs/**/*.md'
+applyTo: '**/*.md'
 ---
 
 ## Markdown Content Rules
