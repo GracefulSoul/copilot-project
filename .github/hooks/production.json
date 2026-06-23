@@ -1,0 +1,24 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": "./scripts/production-security.sh",
+        "description": "Strict security validation for production",
+        "timeout": 15,
+        "env": {
+          "ENV": "production",
+          "SECURITY_LEVEL": "strict"
+        }
+      }
+    ],
+    "PostToolUse": [
+      {
+        "type": "command",
+        "command": "./scripts/compliance-check.sh",
+        "description": "Verify compliance requirements",
+        "timeout": 20
+      }
+    ]
+  }
+}

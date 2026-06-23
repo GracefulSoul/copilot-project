@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": "./scripts/claude-security-check.sh",
+        "description": "Validate tool usage (Claude Code compatible)"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "type": "command",
+        "command": "prettier --write .",
+        "description": "Auto-format after file edits (Claude Code compatible)"
+      }
+    ]
+  }
+}
