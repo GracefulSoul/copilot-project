@@ -3,55 +3,43 @@
     "SessionStart": [
       {
         "type": "command",
-        "command": "./scripts/session-init.sh",
-        "description": "Initialize session and load project context"
+        "command": "bash ./scripts/hook-pass.sh session-start",
+        "timeout": 10
       }
     ],
     "PreToolUse": [
       {
         "type": "command",
-        "command": "./scripts/security-check.sh",
-        "description": "Block dangerous operations",
+        "command": "bash ./scripts/hook-pass.sh pre-tool-use",
         "timeout": 10
       }
     ],
     "PostToolUse": [
       {
         "type": "command",
-        "command": "npx prettier --write .",
-        "description": "Format files after edits",
-        "cwd": ".",
-        "windows": "powershell -File scripts\\format.ps1",
-        "timeout": 30
-      },
-      {
-        "type": "command",
-        "command": "./scripts/audit-log.sh",
-        "description": "Log all tool usage for audit",
-        "timeout": 5
+        "command": "bash ./scripts/hook-pass.sh post-tool-use",
+        "timeout": 10
       }
     ],
     "SubagentStart": [
       {
         "type": "command",
-        "command": "./scripts/subagent-log.sh",
-        "description": "Log subagent start event",
+        "command": "bash ./scripts/subagent-log.sh",
         "timeout": 10
       }
     ],
     "SubagentStop": [
       {
         "type": "command",
-        "command": "./scripts/subagent-log.sh",
-        "description": "Log subagent stop event",
+        "command": "bash ./scripts/subagent-log.sh",
         "timeout": 10
       }
     ],
     "Stop": [
       {
         "type": "command",
-        "command": "./scripts/session-cleanup.sh",
-        "description": "Generate session report and cleanup"
+        "command": "bash ./scripts/hook-pass.sh stop",
+        "timeout": 10
       }
     ]
   }

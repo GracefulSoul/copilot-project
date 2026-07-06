@@ -1,32 +1,29 @@
 {
   "hooks": {
-    "PreToolUse": [
-      {
-        "type": "command",
-        "command": "./scripts/claude-security-check.sh",
-        "description": "Validate tool usage (Claude Code compatible)"
-      }
-    ],
-    "PostToolUse": [
-      {
-        "type": "command",
-        "command": "prettier --write .",
-        "description": "Auto-format after file edits (Claude Code compatible)"
-      }
-    ]
-    ,
     "SubagentStart": [
       {
-        "type": "command",
-        "command": "./scripts/subagent-log.sh",
-        "description": "Log subagent start event"
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ./scripts/subagent-log.sh",
+            "timeout": 10,
+            "statusMessage": "Logging subagent start"
+          }
+        ]
       }
     ],
     "SubagentStop": [
       {
-        "type": "command",
-        "command": "./scripts/subagent-log.sh",
-        "description": "Log subagent stop event"
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ./scripts/subagent-log.sh",
+            "timeout": 10,
+            "statusMessage": "Logging subagent stop"
+          }
+        ]
       }
     ]
   }
