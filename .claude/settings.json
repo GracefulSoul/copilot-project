@@ -14,5 +14,20 @@
         "description": "Auto-format after file edits (Claude Code compatible)"
       }
     ]
+    ,
+    "SubagentStart": [
+      {
+        "type": "command",
+        "command": "./scripts/subagent-log.sh",
+        "description": "Log subagent start event"
+      }
+    ],
+    "SubagentStop": [
+      {
+        "type": "command",
+        "command": "./scripts/subagent-log.sh",
+        "description": "Log subagent stop event"
+      }
+    ]
   }
 }

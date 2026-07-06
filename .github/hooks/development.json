@@ -31,6 +31,22 @@
         "timeout": 5
       }
     ],
+    "SubagentStart": [
+      {
+        "type": "command",
+        "command": "./scripts/subagent-log.sh",
+        "description": "Log subagent start event",
+        "timeout": 10
+      }
+    ],
+    "SubagentStop": [
+      {
+        "type": "command",
+        "command": "./scripts/subagent-log.sh",
+        "description": "Log subagent stop event",
+        "timeout": 10
+      }
+    ],
     "Stop": [
       {
         "type": "command",
